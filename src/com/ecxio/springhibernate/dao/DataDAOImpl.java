@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -47,14 +48,28 @@ public class DataDAOImpl implements DataDAO{
 		Session session = this.sessionFactory.getCurrentSession();
 		List<Data> dataList = session.createQuery("from Data where approved=:approved").setParameter("approved", false).list();
 		for(Data d : dataList){
-			logger.info("Data List::"+d);
+			logger.info("Admin List::"+d);
 		}
 		return dataList;
 	}
 
 	@Override
 	public void updateData(Data d) {
-		this.sessionFactory.getCurrentSession().update(d);
+		Session session = this.sessionFactory.getCurrentSession();
+		Transaction tx = null;
+		 try {
+		     tx = session.beginTransaction();
+		     session.update(d);
+		     tx.commit();
+		 }
+		 catch (Exception e) {
+		     if (tx!=null) tx.rollback();
+		     throw e;
+		 }
+		 finally {
+			 session.close();
+		 }
+		logger.info("Data Updated:"+d);
 	}
 
 }

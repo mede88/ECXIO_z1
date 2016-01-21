@@ -42,6 +42,7 @@ public class DataServiceImpl implements DataService {
 
 	@Override
 	public void updateData(Data d) {
+		d.setApproved(true);
 		this.dataDAO.updateData(d);
 		
 	}
