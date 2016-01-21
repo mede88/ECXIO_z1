@@ -34,7 +34,7 @@ public class DataDAOImpl implements DataDAO{
 	@Override
 	public List<Data> listData() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Data> dataList = session.createQuery("from Data where approved=:approved").setParameter("approved", 1).list();
+		List<Data> dataList = session.createQuery("from Data where approved=:approved").setParameter("approved", true).list();
 		for(Data d : dataList){
 			logger.info("Data List::"+d);
 		}
@@ -45,7 +45,7 @@ public class DataDAOImpl implements DataDAO{
 	@Override
 	public List<Data> listAdmin() {
 		Session session = this.sessionFactory.getCurrentSession();
-		List<Data> dataList = session.createQuery("from Data where approved=:approved").setParameter("approved", 0).list();
+		List<Data> dataList = session.createQuery("from Data where approved=:approved").setParameter("approved", false).list();
 		for(Data d : dataList){
 			logger.info("Data List::"+d);
 		}

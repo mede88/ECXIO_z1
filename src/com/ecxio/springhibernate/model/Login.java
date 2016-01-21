@@ -17,7 +17,6 @@ public class Login {
 	@Column(name="id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
-
 	private String username;
 	private String password;
 

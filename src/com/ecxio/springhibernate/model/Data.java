@@ -19,13 +19,13 @@ public class Data {
 	private String name;  
 	private String email;
 	private String note;
-	private int approved = 0;
+	private boolean approved;
 
-	public int getApproved() {
+	public boolean getApproved() {
 		return approved;
 	}
 
-	public void setApproved(int approved) {
+	public void setApproved(boolean approved) {
 		this.approved = approved;
 	}
 
