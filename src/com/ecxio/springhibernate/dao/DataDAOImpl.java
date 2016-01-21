@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.ecxio.springhibernate.model.Data;
-import com.ecxio.springhibernate.model.Login;
 
 
 @Repository
@@ -54,19 +53,8 @@ public class DataDAOImpl implements DataDAO{
 	}
 
 	@Override
-	public void updateUser(Data d) {
+	public void updateData(Data d) {
 		this.sessionFactory.getCurrentSession().update(d);
-	}
-
-	@SuppressWarnings("unchecked")
-	@Override
-	public String validateUsernamePassword(Login l) {
-		Session session = this.sessionFactory.getCurrentSession();
-		List<Login> logInSuccess = session.createQuery("from Login where username=:username and password=:password").setParameter("username", l.getUsername()).setParameter("password", l.getPassword()).list();
-		if (logInSuccess.size() > 0)
-			return "AdminPage";
-		else
-			return "LogInPage";
 	}
 
 }

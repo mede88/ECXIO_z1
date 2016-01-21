@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
  
 import com.ecxio.springhibernate.dao.DataDAO;
 import com.ecxio.springhibernate.model.Data;
-import com.ecxio.springhibernate.model.Login;
  
 @Service
 @ManagedBean(name="dataService")
@@ -42,15 +41,8 @@ public class DataServiceImpl implements DataService {
     }
 
 	@Override
-	 @Transactional
-	public String validateUsernamePassword(Login l) {
-		 return this.dataDAO.validateUsernamePassword(l);
-		
-	}
-
-	@Override
-	public void updateUser(Data d) {
-		this.dataDAO.updateUser(d);
+	public void updateData(Data d) {
+		this.dataDAO.updateData(d);
 		
 	}
   
