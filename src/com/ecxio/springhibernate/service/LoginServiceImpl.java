@@ -9,7 +9,7 @@ import com.ecxio.springhibernate.dao.LoginDAO;
 import com.ecxio.springhibernate.model.Login;
  
 @Service
-@ManagedBean(name="dataService")
+@ManagedBean(name="loginService")
 @SessionScoped
 public class LoginServiceImpl implements LoginService {
  

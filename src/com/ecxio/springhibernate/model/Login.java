@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
-@ManagedBean(name="login")
+@ManagedBean(name="login" )
 public class Login {
 
 	@Id

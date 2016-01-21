@@ -55,6 +55,15 @@
         class="com.ecxio.springhibernate.service.DataServiceImpl">
         <beans:property name="dataDAO" ref="dataDAO"></beans:property>
     </beans:bean>
+        <beans:bean id="loginDAO"
+        class="com.ecxio.springhibernate.dao.LoginDAOImpl">
+        <beans:property name="sessionFactory"
+            ref="hibernate4AnnotatedSessionFactory" />
+    </beans:bean>
+    <beans:bean id="loginService"
+        class="com.ecxio.springhibernate.service.LoginServiceImpl">
+        <beans:property name="loginDAO" ref="loginDAO"></beans:property>
+    </beans:bean>
      
     <context:component-scan base-package="com.ecxio" />
  
