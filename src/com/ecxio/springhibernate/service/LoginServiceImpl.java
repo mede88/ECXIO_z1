@@ -20,7 +20,7 @@ public class LoginServiceImpl implements LoginService {
     }
 
 	@Override
-	 @Transactional
+	@Transactional
 	public String validateUsernamePassword(Login l) {
 		 return this.loginDAO.validateUsernamePassword(l);
 		

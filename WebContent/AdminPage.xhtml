@@ -63,23 +63,16 @@
 	            </tr>
 	            <ui:repeat value="${dataService.listAdmin()}" var="data">
 	               
-		                <tr>
-		                    <td>${data.name}</td>
-		                    <td>${data.email}</td>
-		                    <td>${data.note}</td>
-		                    
-		                	<td>
-<!-- 		                		<h:commandButton action="#{dataService.updateData(data)}" value="Approve"></h:commandButton> -->
-								<h:commandLink  action="#{dataService.approve}" >
-								     <f:param name="selectedRowIndex" value="#{data.id}"/>
-								</h:commandLink>
-		                	</td>
-            		
-<!-- 		                    <td> -->
-<!--  								<h:selectBooleanCheckbox value="#{data.approved}" /> -->
+	                <tr>
+	                    <td>${data.name}</td>
+	                    <td>${data.email}</td>
+	                    <td>${data.note}</td>
+	                    
+	                	<td>
+		                <h:commandButton action="#{dataService.updateData(data)}" value="Approve"></h:commandButton>
 
-<!-- 		                    </td>            -->
-		                </tr>
+	                	</td>
+	                </tr>
 	               
 	            </ui:repeat>
 	            

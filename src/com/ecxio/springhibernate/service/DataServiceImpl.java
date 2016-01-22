@@ -40,6 +40,8 @@ public class DataServiceImpl implements DataService {
         return this.dataDAO.listAdmin();
     }
 
+    // METODA SE POZIVA IZ AdminPage.xhtml
+    // BUG je da ako se stranica refresha onda approva sve redke koji su ispod buttona s kojim se zadnje approvalo.
 	@Override
 	public void updateData(Data d) {
 		d.setApproved(true);
@@ -47,6 +49,14 @@ public class DataServiceImpl implements DataService {
 		
 	}
 	
+	
+	/*
+	 * OVO SAM PROBAO KORISTITI UMJESTO BUTTONA U ADMINPAGE.XHTML, 
+	 * U TOM SLUCAJU IMAM OVE DVE METODE DOLE, AL NI TO MI NIJE RADILO
+	   <!-- <h:commandLink  action="#{dataService.approve}" value="Approve"> -->
+	   <!-- <f:param name="selectedRowIndex" value="#{data.id}"/> -->
+	   <!-- </h:commandLink> -->
+	*/
 	public String approve() {
 	     Data data = getData("selectedRowIndex");
 	     updateData(data);
