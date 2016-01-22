@@ -9,4 +9,5 @@ public interface DataDAO {
     public List<Data> listData();
 	public List<Data> listAdmin();
 	public void updateData(Data d);
+	public Data getData(int id);
 }

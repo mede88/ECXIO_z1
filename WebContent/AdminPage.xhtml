@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    xmlns:c="http://java.sun.com/jsp/jstl/core"
+    xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
     <title>Admin Page</title>
     <style type="text/css">
@@ -68,7 +69,10 @@
 		                    <td>${data.note}</td>
 		                    
 		                	<td>
-		                		<h:commandButton action="#{dataService.updateData(data)}" value="Approve"></h:commandButton>
+<!-- 		                		<h:commandButton action="#{dataService.updateData(data)}" value="Approve"></h:commandButton> -->
+								<h:commandLink  action="#{dataService.approve}" >
+								     <f:param name="selectedRowIndex" value="#{data.id}"/>
+								</h:commandLink>
 		                	</td>
             		
 <!-- 		                    <td> -->

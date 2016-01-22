@@ -46,5 +46,16 @@ public class DataServiceImpl implements DataService {
 		this.dataDAO.updateData(d);
 		
 	}
+	
+	public String approve() {
+	     Data data = getData("selectedRowIndex");
+	     updateData(data);
+	     return "OK";
+	   }
+	
+	public Data getData(String s){
+		Data data = this.dataDAO.getData(Integer.parseInt(s));
+		return data;
+	}
   
 }
