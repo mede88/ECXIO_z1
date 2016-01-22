@@ -68,7 +68,7 @@
 		                    <td>${data.note}</td>
 		                    
 		                	<td>
-		                		<h:commandButton action="#{data.setApproved(true)}" value="Approve"></h:commandButton>
+		                		<h:commandButton action="#{dataService.updateData(data)}" value="Approve"></h:commandButton>
 		                	</td>
             		
 <!-- 		                    <td> -->

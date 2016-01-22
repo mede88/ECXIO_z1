@@ -6,6 +6,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.springframework.transaction.annotation.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -14,6 +15,7 @@ import com.ecxio.springhibernate.model.Data;
 
 
 @Repository
+@Transactional
 public class DataDAOImpl implements DataDAO{
 
 	private static final Logger logger = LoggerFactory.getLogger(DataDAOImpl.class);
