@@ -52,14 +52,21 @@ INSERT INTO `data` (`id`, `name`, `email`, `note`, `approved`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
-  `id` tinyint(3) unsigned NOT NULL,
-  `username` varchar(15) NOT NULL,
-  `password` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `username` varchar(45) NOT NULL,
+  `password` varchar(45) NOT NULL,
+  `enabled` tinyint(4) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `password`) VALUES
-(1, 'ecxio', '1234');
+INSERT INTO `users` (`username`, `password`, `enabled`) VALUES
+('ecxio', '1234', 1),
+('zoki', '1234', 1);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`username`);
