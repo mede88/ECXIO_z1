@@ -17,10 +17,10 @@
 		<h:form id="loginForm">
 		
 		<h:outputLabel value="Username: " />
-		<h:inputText value="#{login.username}" required="true" requiredMessage="Username field must not be empty" />
+		<h:inputText value="#{login.username}" required="true" requiredMessage="Username required!" />
 		<br /><br />
 		<h:outputLabel value="Password:" />
-		<h:inputSecret value="#{login.password}"  required="true" requiredMessage="Password field must not be empty" ></h:inputSecret>
+		<h:inputSecret value="#{login.password}"  required="true" requiredMessage="Password required!" ></h:inputSecret>
 		<br /><br />
 		<h:commandButton value="Login" action="#{loginService.validateUsernamePassword(login)}"></h:commandButton>
 	</h:form>
