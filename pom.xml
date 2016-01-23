@@ -14,7 +14,7 @@
  
         <!-- Spring -->
         <spring-framework.version>4.2.4.RELEASE</spring-framework.version>
-       
+
         <aspectj.version>1.8.7</aspectj.version>
  
         <!-- Hibernate / JPA -->
@@ -170,7 +170,7 @@
   		<dependency>
   			<groupId>org.springframework</groupId>
   			<artifactId>spring-webmvc</artifactId>
-  			<version>${spring-framework.version}</version>
+  			<version>4.2.4.RELEASE</version>
   		</dependency>
   		<dependency>
   			<groupId>javax.inject</groupId>
@@ -252,6 +252,30 @@
   			<artifactId>javaee-web-api</artifactId>
   			<version>7.0</version>
   		</dependency>
+  		        
+        <!-- Spring Security -->
+  		<dependency>
+  			<groupId>org.springframework.security</groupId>
+  			<artifactId>spring-security-web</artifactId>
+  			<version>4.0.3.RELEASE</version>
+  		</dependency>
+  		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>4.0.3.RELEASE</version>
+  		</dependency>
+  		<dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.0.3.RELEASE</version>
+        </dependency>
+        
+        <!-- JSR-330 -->
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
   	</dependencies>
   </dependencyManagement>
 </project>

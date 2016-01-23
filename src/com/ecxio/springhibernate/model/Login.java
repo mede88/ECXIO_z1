@@ -1,6 +1,7 @@
 package com.ecxio.springhibernate.model;
 
 import javax.faces.bean.ManagedBean;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,22 +15,13 @@ import javax.persistence.Table;
 public class Login {
 
 	@Id
-	@Column(name="id")
+	@Column(name="username")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
 	private String username;
 	private String password;
+	private int enabled;
 
 	//Getters and Setters
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
 	public String getUsername() {
 		return username;
 	}
@@ -46,10 +38,18 @@ public class Login {
 		this.password = password;
 	}
 
-	@Override
-	public String toString() {
-		return "Login [username=" + username + ", password=" + password + "]";
+	public int getEnabled() {
+		return enabled;
 	}
 
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Login [username=" + username + ", password=" + password  + ", enabled=" + enabled + "]";
+	}
 
 }
