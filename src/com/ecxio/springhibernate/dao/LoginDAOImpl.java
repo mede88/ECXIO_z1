@@ -31,9 +31,9 @@ public class LoginDAOImpl implements LoginDAO{
 		List<Login> logInSuccess = session.createQuery("from Login where username=:username and password=:password").setParameter("username", l.getUsername()).setParameter("password", l.getPassword()).list();
 		logger.info("Login validation, Details="+l);
 		if (logInSuccess.size() > 0)
-			return "AdminPage";
+			return "admin";
 		else
-			return "LogInPage";
+			return "login";
 	}
 
 }

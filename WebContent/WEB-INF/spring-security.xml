@@ -10,18 +10,18 @@
     <!-- enable use-expressions -->
 	<http auto-config="true" use-expressions="true">
 		
-		<intercept-url pattern="/AdminPage**" />
+		<intercept-url pattern="/admin**" />
 		
 		<!-- access denied page -->
-		<access-denied-handler error-page="/LogInPage" />
+		<access-denied-handler error-page="/login" />
 		
 		<form-login 
-		    login-page="/LogInPage" 
-		    default-target-url="/AdminPage" 
-			authentication-failure-url="/LogInPage" 
+		    login-page="/login" 
+		    default-target-url="/admin" 
+			authentication-failure-url="/login" 
 			username-parameter="username"
 			password-parameter="password" />
-		<logout logout-success-url="/LogInPage"  />
+		<logout logout-success-url="/login"  />
 		<!-- enable csrf protection -->
 		<csrf/>
 	</http>
